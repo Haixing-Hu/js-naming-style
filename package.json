@@ -1,6 +1,6 @@
 {
   "name": "@haixing_hu/naming-style",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JavaScript library for converting between different naming styles of identifiers.",
   "author": "Haixing Hu",
   "license": "Apache-2.0",

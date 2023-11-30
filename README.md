@@ -160,8 +160,8 @@ submit an issue or PR to our [GitHub repository].
 
 ## <span id="license">License</span>
 
-`naming-style` is licensed under Apache 2.0. For more details, please refer to 
+[naming-style] is licensed under Apache 2.0. For more details, please refer to 
 the [LICENSE](LICENSE) file.
 
-[`naming-style`]: https://npmjs.com/package/@haixing_hu/naming-style
+[naming-style]: https://npmjs.com/package/@haixing_hu/naming-style
 [GitHub repository]: https://github.com/Haixing-Hu/js-naming-style
