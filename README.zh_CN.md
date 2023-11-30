@@ -1,12 +1,12 @@
-# `case-format` 
+# `naming-style` 
 
-[![npm package](https://img.shields.io/npm/v/@haixing_hu/case-format.svg)](https://npmjs.com/package/@haixing_hu/case-format)
+[![npm package](https://img.shields.io/npm/v/@haixing_hu/naming-style.svg)](https://npmjs.com/package/@haixing_hu/naming-style)
 [![License](https://img.shields.io/badge/License-Apache-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![English Document](https://img.shields.io/badge/Document-English-blue.svg)](README.md)
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Haixing-Hu/js-case-format/tree/master.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/Haixing-Hu/js-case-format/tree/master)
-[![Coverage Status](https://coveralls.io/repos/github/Haixing-Hu/js-case-format/badge.svg?branch=master)](https://coveralls.io/github/Haixing-Hu/js-case-format?branch=master)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Haixing-Hu/js-naming-style/tree/master.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/Haixing-Hu/js-naming-style/tree/master)
+[![Coverage Status](https://coveralls.io/repos/github/Haixing-Hu/js-naming-style/badge.svg?branch=master)](https://coveralls.io/github/Haixing-Hu/js-naming-style?branch=master)
 
-[case-format] 是一个JavaScript库，用于转换标志符名称的大小写风格。它支持多种编程语言的命名规范，
+[naming-style] 是一个JavaScript库，用于转换标志符的命名风格。它支持多种编程语言的命名规范，
 包括Java、C++和Python，能够方便地在不同的大小写风格之间进行转换。
 
 ## <span id="content">目录</span>
@@ -27,21 +27,21 @@
 
 通过 `npm` 安装：
 ```bash
-npm install @haixing_hu/case-format
+npm install @haixing_hu/naming-style
 ```
 或者通过 `yarn` 安装：
 ```bash
-yarn add @haixing_hu/case-format
+yarn add @haixing_hu/naming-style
 ```
 
 ## <span id="example">使用示例</span>
 
 ```js
-import NamingStyle from '@haixing_hu/case-format';
+import NamingStyle from '@haixing_hu/naming-style';
 
 const str = 'hello-world-boy';
 const converted = NamingStyle.LOWER_HYPHEN.to(NamingStyle.LOWER_CAMEL, str);
-console.log(converted);     // 输出 helloWorldBoy
+console.log(converted);     // 输出 "helloWorldBoy"
 ```
 
 ## <span id="usage">使用方法</span>
@@ -50,7 +50,7 @@ console.log(converted);     // 输出 helloWorldBoy
 
 导入`NamingStyle`类：
 ```js
-import NamingStyle from '@haixing_hu/case-format';
+import NamingStyle from '@haixing_hu/naming-style';
 ```
 或者导入表示各种命名风格的全局常量：
 ```js
@@ -60,16 +60,16 @@ import {
   LOWER_CAMEL,
   UPPER_CAMEL,
   UPPER_UNDERSCORE,
-} from '@haixing_hu/case-format';
+} from '@haixing_hu/naming-style';
 ```
 
 ### <span id="convert">转换字符串格式</span>
 
-使用 `NamingStyle` 类的静态实例来转换字符串格式。例如，将 `lower-hyphen` 
-格式的字符串转换为 `lowerCamel` 格式：
+使用 `NamingStyle` 类的静态实例来转换字符串格式。例如，将 `lower-hyphen` 命名风格的字符串
+转换为其他风格：
 
 ```js
-import NamingStyle from '@haixing_hu/case-format';
+import NamingStyle from '@haixing_hu/naming-style';
 
 expect(NamingStyle.LOWER_HYPHEN.to(NamingStyle.LOWER_HYPHEN, 'hello-world')).toBe('hello-world');
 expect(NamingStyle.LOWER_HYPHEN.to(NamingStyle.LOWER_UNDERSCORE, 'hello-world')).toBe('hello_world');
@@ -84,13 +84,13 @@ expect(NamingStyle.LOWER_HYPHEN.to(NamingStyle.UPPER_UNDERSCORE, 'hello-world'))
 
 - `NamingStyle.LOWER_HYPHEN`：使用连字符分隔的小写字母，例如 `"lower-hyphen"`。
   此命名风格常用于 XML 的标签名。
-- `NamingStyle.LOWER_UNDERSCORE`：使用下划线分隔的小写字母，例如 `"lower\_underscore"`。
+- `NamingStyle.LOWER_UNDERSCORE`：使用下划线分隔的小写字母，例如 `"lower_underscore"`。
   此命名风格常用于 C++ 和 Python 的变量名和属性名。
 - `NamingStyle.LOWER_CAMEL`：首字母小写的驼峰命名法，例如 `"lowerCamel"`。
   此命名风格常用于 Java 的变量名和属性名。
 - `NamingStyle.UPPER_CAMEL`：首字母大写的驼峰命名法，例如 `"UpperCamel"`。  
   此命名风格常用于 Java 和 C++ 的类名。
-- `NamingStyle.UPPER_UNDERSCORE`：使用下划线分隔的大写字母，例如 `"UPPER\_UNDERSCORE"`。
+- `NamingStyle.UPPER_UNDERSCORE`：使用下划线分隔的大写字母，例如 `"UPPER_UNDERSCORE"`。
   此命名风格常用于 Java 和 C++ 的常量名。
 
 ### <span id="all-formats">获取所有格式</span>
@@ -139,7 +139,7 @@ import {
   LOWER_CAMEL, 
   UPPER_CAMEL, 
   UPPER_UNDERSCORE, 
-} from '@haixing_hu/case-format';
+} from '@haixing_hu/naming-style';
 
 expect(LOWER_HYPHEN.to(LOWER_HYPHEN, 'hello-world')).toBe('hello-world');
 expect(LOWER_HYPHEN.to(LOWER_UNDERSCORE, 'hello-world')).toBe('hello_world');
@@ -154,7 +154,7 @@ expect(LOWER_HYPHEN.to(UPPER_UNDERSCORE, 'hello-world')).toBe('HELLO_WORLD');
 
 ## <span id="license">版权协议</span>
 
-[case-format] 采用 Apache 2.0 许可证。详细信息请查阅 [LICENSE](LICENSE) 文件。
+[naming-style] 采用 Apache 2.0 许可证。详细信息请查阅 [LICENSE](LICENSE) 文件。
 
-[case-format]: https://npmjs.com/package/@haixing_hu/case-format
-[GitHub 仓库]: https://github.com/Haixing-Hu/js-case-format
+[naming-style]: https://npmjs.com/package/@haixing_hu/naming-style
+[GitHub 仓库]: https://github.com/Haixing-Hu/js-naming-style
