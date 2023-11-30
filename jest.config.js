@@ -10,7 +10,6 @@
 module.exports = {
   verbose: true,
   testMatch: ['**/test/**/*.test.js'],
-  testEnvironment: 'jest-environment-jsdom-global',
   testEnvironmentOptions: {
     customExportConditions: ['node', 'node-addons'],
   },
@@ -18,9 +17,6 @@ module.exports = {
   transform: {
     '\\.js$': 'babel-jest',
   },
-  // transformIgnorePatterns: [
-  //   '/node_modules/(?!@haixing_hu)',
-  // ],
   setupFilesAfterEnv: [
     'jest-extended/all',
   ],
