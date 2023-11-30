@@ -6,8 +6,8 @@
 //    All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
-import firstCharOnlyToUpper from './first-char-only-to-upper';
-import findFirst from './find-first';
+import firstCharOnlyToUpper from './impl/first-char-only-to-upper';
+import findFirst from './impl/find-first';
 
 /**
  * A class that represents case formats.
@@ -134,6 +134,39 @@ class CaseFormat {
   }
 
   /**
+   * Returns the case format constant of the specified name.
+   *
+   * @param {String|CaseFormat} name
+   *     the name of the case format constant, or a `CaseFormat` instance. The
+   *     name is compared case-insensitively and the characters '-' and '_' are
+   *     treated as the same.
+   * @return {CaseFormat}
+   *     the case format constant of the specified name, or the specified
+   *     `CaseFormat` instance if the argument `name` is a `CaseFormat` instance.
+   * @throws {TypeError}
+   *     if the argument `name` is not a string nor a `CaseFormat` instance.
+   * @throws {Error}
+   *     if there is no case format constant of the specified name.
+   */
+  static of(name) {
+    if (name instanceof CaseFormat) {
+      return name;
+    }
+    if (typeof name !== 'string') {
+      throw new TypeError('The argument of `CaseFormat.of()` must be a string or a `CaseFormat` instance.');
+    }
+    const normalizedName = name.replace(/_/g, '-').toLowerCase();
+    const values = CaseFormat.values();
+    for (let i = 0; i < values.length; ++i) {
+      const value = values[i];
+      if (value.name.toLowerCase() === normalizedName) {
+        return value;
+      }
+    }
+    throw new Error(`Unknown case format: '${name}'.`);
+  }
+
+  /**
    * Constructor a {@link CaseFormat} instance.
    *
    * **NOTE:** this constructor is private, you should use the static constants
@@ -213,5 +246,13 @@ class CaseFormat {
     }
   }
 }
+
+// freeze the constants and the class
+Object.freeze(CaseFormat.LOWER_HYPHEN);
+Object.freeze(CaseFormat.LOWER_UNDERSCORE);
+Object.freeze(CaseFormat.LOWER_CAMEL);
+Object.freeze(CaseFormat.UPPER_CAMEL);
+Object.freeze(CaseFormat.UPPER_UNDERSCORE);
+Object.freeze(CaseFormat);
 
 export default CaseFormat;
