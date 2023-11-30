@@ -15,40 +15,40 @@ import {
 } from '../src';
 
 /**
- * Unit tests of the {@link CaseFormat.LOWER_CAMEL}.
+ * Unit tests of the {@link NamingStyle.LOWER_CAMEL}.
  *
  * @author Haixing Hu
  */
-describe('Test the CaseFormat.LOWER_CAMEL', () => {
-  test('Test CaseFormat.LOWER_CAMEL.to(), undefined', () => {
+describe('Test the NamingStyle.LOWER_CAMEL', () => {
+  test('Test NamingStyle.LOWER_CAMEL.to(), undefined', () => {
     expect(LOWER_CAMEL.to(LOWER_HYPHEN, undefined)).toBeUndefined();
     expect(LOWER_CAMEL.to(LOWER_UNDERSCORE, undefined)).toBeUndefined();
     expect(LOWER_CAMEL.to(LOWER_CAMEL, undefined)).toBeUndefined();
     expect(LOWER_CAMEL.to(UPPER_CAMEL, undefined)).toBeUndefined();
     expect(LOWER_CAMEL.to(UPPER_UNDERSCORE, undefined)).toBeUndefined();
   });
-  test('Test CaseFormat.LOWER_CAMEL.to(), null', () => {
+  test('Test NamingStyle.LOWER_CAMEL.to(), null', () => {
     expect(LOWER_CAMEL.to(LOWER_HYPHEN, null)).toBeNull();
     expect(LOWER_CAMEL.to(LOWER_UNDERSCORE, null)).toBeNull();
     expect(LOWER_CAMEL.to(LOWER_CAMEL, null)).toBeNull();
     expect(LOWER_CAMEL.to(UPPER_CAMEL, null)).toBeNull();
     expect(LOWER_CAMEL.to(UPPER_UNDERSCORE, null)).toBeNull();
   });
-  test('Test CaseFormat.LOWER_CAMEL.to(), empty string', () => {
+  test('Test NamingStyle.LOWER_CAMEL.to(), empty string', () => {
     expect(LOWER_CAMEL.to(LOWER_HYPHEN, '')).toBe('');
     expect(LOWER_CAMEL.to(LOWER_UNDERSCORE, '')).toBe('');
     expect(LOWER_CAMEL.to(LOWER_CAMEL, '')).toBe('');
     expect(LOWER_CAMEL.to(UPPER_CAMEL, '')).toBe('');
     expect(LOWER_CAMEL.to(UPPER_UNDERSCORE, '')).toBe('');
   });
-  test('Test CaseFormat.LOWER_CAMEL.to(), simple case', () => {
+  test('Test NamingStyle.LOWER_CAMEL.to(), simple case', () => {
     expect(LOWER_CAMEL.to(LOWER_HYPHEN, 'helloWorldEverybody')).toBe('hello-world-everybody');
     expect(LOWER_CAMEL.to(LOWER_UNDERSCORE, 'helloWorldEverybody')).toBe('hello_world_everybody');
     expect(LOWER_CAMEL.to(LOWER_CAMEL, 'helloWorldEverybody')).toBe('helloWorldEverybody');
     expect(LOWER_CAMEL.to(UPPER_CAMEL, 'helloWorldEverybody')).toBe('HelloWorldEverybody');
     expect(LOWER_CAMEL.to(UPPER_UNDERSCORE, 'helloWorldEverybody')).toBe('HELLO_WORLD_EVERYBODY');
   });
-  test('Test CaseFormat.LOWER_CAMEL.to(), single word', () => {
+  test('Test NamingStyle.LOWER_CAMEL.to(), single word', () => {
     expect(LOWER_CAMEL.to(LOWER_HYPHEN, 'hello')).toBe('hello');
     expect(LOWER_CAMEL.to(LOWER_UNDERSCORE, 'hello')).toBe('hello');
     expect(LOWER_CAMEL.to(LOWER_CAMEL, 'hello')).toBe('hello');

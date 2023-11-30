@@ -12,17 +12,17 @@ import {
   LOWER_CAMEL,
   UPPER_CAMEL,
   UPPER_UNDERSCORE,
-  CaseFormat,
+  NamingStyle,
 } from '../src';
 
 /**
- * Unit tests of the {@link CaseFormat#values()} function.
+ * Unit tests of the {@link NamingStyle#values()} function.
  *
  * @author Haixing Hu
  */
-describe('Test the CaseFormat.values()', () => {
-  test('Test CaseFormat.values()', () => {
-    expect(CaseFormat.values()).toEqual([
+describe('Test the NamingStyle.values()', () => {
+  test('Test NamingStyle.values()', () => {
+    expect(NamingStyle.values()).toEqual([
       LOWER_HYPHEN,
       LOWER_UNDERSCORE,
       LOWER_CAMEL,

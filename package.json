@@ -1,29 +1,30 @@
 {
-  "name": "@haixing_hu/case-format",
+  "name": "@haixing_hu/naming-style",
   "version": "1.0.0",
-  "description": "A simple JavaScript library for converting the case of ASCII strings.",
+  "description": "A JavaScript library for converting between different naming styles of identifiers.",
   "author": "Haixing Hu",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Haixing-Hu/js-case-format.git"
+    "url": "git+https://github.com/Haixing-Hu/js-naming-style.git"
   },
   "bugs": {
-    "url": "https://github.com/Haixing-Hu/js-case-format/issues"
+    "url": "https://github.com/Haixing-Hu/js-naming-style/issues"
   },
-  "homepage": "https://github.com/Haixing-Hu/js-case-format",
+  "homepage": "https://github.com/Haixing-Hu/js-naming-style",
   "keywords": [
     "javascript",
     "string",
     "case",
-    "conversion"
+    "conversion",
+    "naming style"
   ],
-  "main": "dist/case-format.cjs.min.js",
-  "module": "dist/case-format.esm.min.mjs",
+  "main": "dist/naming-style.cjs.min.js",
+  "module": "dist/naming-style.esm.min.mjs",
   "exports": {
     ".": {
-      "require": "./dist/case-format.cjs.min.js",
-      "import": "./dist/case-format.esm.min.mjs"
+      "require": "./dist/naming-style.cjs.min.js",
+      "import": "./dist/naming-style.esm.min.mjs"
     }
   },
   "scripts": {

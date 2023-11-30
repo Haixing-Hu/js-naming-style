@@ -37,10 +37,10 @@ yarn add @haixing_hu/case-format
 ## <span id="example">使用示例</span>
 
 ```js
-import CaseFormat from '@haixing_hu/case-format';
+import NamingStyle from '@haixing_hu/case-format';
 
 const str = 'hello-world-boy';
-const converted = CaseFormat.LOWER_HYPHEN.to(CaseFormat.LOWER_CAMEL, str);
+const converted = NamingStyle.LOWER_HYPHEN.to(NamingStyle.LOWER_CAMEL, str);
 console.log(converted);     // 输出 helloWorldBoy
 ```
 
@@ -48,9 +48,9 @@ console.log(converted);     // 输出 helloWorldBoy
 
 ### <span id="import">导入</span>
 
-导入`CaseFormat`类：
+导入`NamingStyle`类：
 ```js
-import CaseFormat from '@haixing_hu/case-format';
+import NamingStyle from '@haixing_hu/case-format';
 ```
 或者导入表示各种命名风格的全局常量：
 ```js
@@ -65,72 +65,72 @@ import {
 
 ### <span id="convert">转换字符串格式</span>
 
-使用 `CaseFormat` 类的静态实例来转换字符串格式。例如，将 `lower-hyphen` 
+使用 `NamingStyle` 类的静态实例来转换字符串格式。例如，将 `lower-hyphen` 
 格式的字符串转换为 `lowerCamel` 格式：
 
 ```js
-import CaseFormat from '@haixing_hu/case-format';
+import NamingStyle from '@haixing_hu/case-format';
 
-expect(CaseFormat.LOWER_HYPHEN.to(CaseFormat.LOWER_HYPHEN, 'hello-world')).toBe('hello-world');
-expect(CaseFormat.LOWER_HYPHEN.to(CaseFormat.LOWER_UNDERSCORE, 'hello-world')).toBe('hello_world');
-expect(CaseFormat.LOWER_HYPHEN.to(CaseFormat.LOWER_CAMEL, 'hello-world')).toBe('helloWorld');
-expect(CaseFormat.LOWER_HYPHEN.to(CaseFormat.UPPER_CAMEL, 'hello-world')).toBe('HelloWorld');
-expect(CaseFormat.LOWER_HYPHEN.to(CaseFormat.UPPER_UNDERSCORE, 'hello-world')).toBe('HELLO_WORLD');
+expect(NamingStyle.LOWER_HYPHEN.to(NamingStyle.LOWER_HYPHEN, 'hello-world')).toBe('hello-world');
+expect(NamingStyle.LOWER_HYPHEN.to(NamingStyle.LOWER_UNDERSCORE, 'hello-world')).toBe('hello_world');
+expect(NamingStyle.LOWER_HYPHEN.to(NamingStyle.LOWER_CAMEL, 'hello-world')).toBe('helloWorld');
+expect(NamingStyle.LOWER_HYPHEN.to(NamingStyle.UPPER_CAMEL, 'hello-world')).toBe('HelloWorld');
+expect(NamingStyle.LOWER_HYPHEN.to(NamingStyle.UPPER_UNDERSCORE, 'hello-world')).toBe('HELLO_WORLD');
 ```
 
 ### <span id="formats">可用的格式转换</span>
 
 本函数库提供以下格式常量，并允许在它们之间进行转换：
 
-- `CaseFormat.LOWER_HYPHEN`：使用连字符分隔的小写字母，例如 `"lower-hyphen"`。
+- `NamingStyle.LOWER_HYPHEN`：使用连字符分隔的小写字母，例如 `"lower-hyphen"`。
   此命名风格常用于 XML 的标签名。
-- `CaseFormat.LOWER_UNDERSCORE`：使用下划线分隔的小写字母，例如 `"lower\_underscore"`。
+- `NamingStyle.LOWER_UNDERSCORE`：使用下划线分隔的小写字母，例如 `"lower\_underscore"`。
   此命名风格常用于 C++ 和 Python 的变量名和属性名。
-- `CaseFormat.LOWER_CAMEL`：首字母小写的驼峰命名法，例如 `"lowerCamel"`。
+- `NamingStyle.LOWER_CAMEL`：首字母小写的驼峰命名法，例如 `"lowerCamel"`。
   此命名风格常用于 Java 的变量名和属性名。
-- `CaseFormat.UPPER_CAMEL`：首字母大写的驼峰命名法，例如 `"UpperCamel"`。  
+- `NamingStyle.UPPER_CAMEL`：首字母大写的驼峰命名法，例如 `"UpperCamel"`。  
   此命名风格常用于 Java 和 C++ 的类名。
-- `CaseFormat.UPPER_UNDERSCORE`：使用下划线分隔的大写字母，例如 `"UPPER\_UNDERSCORE"`。
+- `NamingStyle.UPPER_UNDERSCORE`：使用下划线分隔的大写字母，例如 `"UPPER\_UNDERSCORE"`。
   此命名风格常用于 Java 和 C++ 的常量名。
 
 ### <span id="all-formats">获取所有格式</span>
 
-使用 `CaseFormat.values()` 方法可获取所有可用的格式常量列表：
+使用 `NamingStyle.values()` 方法可获取所有可用的格式常量列表：
 
 ```js
-const formats = CaseFormat.values();
+const formats = NamingStyle.values();
 expect(formats).toEqual([
-  CaseFormat.LOWER_HYPHEN,
-  CaseFormat.LOWER_UNDERSCORE,
-  CaseFormat.LOWER_CAMEL,
-  CaseFormat.UPPER_CAMEL,
-  CaseFormat.UPPER_UNDERSCORE,
+  NamingStyle.LOWER_HYPHEN,
+  NamingStyle.LOWER_UNDERSCORE,
+  NamingStyle.LOWER_CAMEL,
+  NamingStyle.UPPER_CAMEL,
+  NamingStyle.UPPER_UNDERSCORE,
 ]);
 ```
 
 ### <span id="get-format">根据名称获取格式</span>
 
-使用 `CaseFormat.of(name)` 方法可根据名称获取对应的格式对象。
-该方法接受一个字符串或一个 `CaseFormat` 实例作为参数；字符串参数大小写不敏感，`'-'`和`'_'`被视为等同。
+使用 `NamingStyle.of(name)` 方法可根据名称获取对应的格式对象。
+该方法接受一个字符串或一个 `NamingStyle` 实例作为参数；字符串参数大小写不敏感，`'-'`和`'_'`被视为等同。
 
 ```js
-let format = CaseFormat.of('lower-camel'); 
-expect(format).toBe(CaseFormat.LOWER_CAMEL);
-format = CaseFormat.of('LOWER-CAMEL');
-expect(format).toBe(CaseFormat.LOWER_CAMEL);
-format = CaseFormat.of('lower_camel');
-expect(format).toBe(CaseFormat.LOWER_CAMEL);
-format = CaseFormat.of('LOWER_CAMEL');
-expect(format).toBe(CaseFormat.LOWER_CAMEL);
-format = CaseFormat.of(CaseFormat.LOWER_CAMEL);
-expect(format).toBe(CaseFormat.LOWER_CAMEL);
+let format = NamingStyle.of('lower-camel');
+expect(format).toBe(NamingStyle.LOWER_CAMEL);
+format = NamingStyle.of('LOWER-CAMEL');
+expect(format).toBe(NamingStyle.LOWER_CAMEL);
+format = NamingStyle.of('lower_camel');
+expect(format).toBe(NamingStyle.LOWER_CAMEL);
+format = NamingStyle.of('LOWER_CAMEL');
+expect(format).toBe(NamingStyle.LOWER_CAMEL);
+format = NamingStyle.of(NamingStyle.LOWER_CAMEL);
+expect(format).toBe(NamingStyle.LOWER_CAMEL);
 ```
 
 如果提供的名称不存在，将抛出错误。
 
 ### <span id="shortcuts">快捷访问方式</span>
 
-除了使用 `CaseFormat` 类成员常量，还可以通过以下全局常量直接访问不同的大小写格式：
+除了使用 `NamingStyle` 类成员常量，还可以通过以下全局常量直接访问不同的大小写格式：
 
 ```js
 import { 

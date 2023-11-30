@@ -6,63 +6,63 @@
 //    All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
-import CaseFormat from './case-format';
+import NamingStyle from './naming-style';
 
 /**
- * Hyphenated variable naming convention, e.g., "lower-hyphen".
+ * XML hyphenated variable naming convention, e.g., "lower-hyphen".
  *
- * This constant is a {@link CaseFormat} instance, it is a short-hand of
- * {@link CaseFormat#LOWER_HYPHEN}. You can use the {@link CaseFormat#to} method
- * to convert a string from one case format to another.
+ * This constant is a {@link NamingStyle} instance, it is a shorthand of
+ * {@link NamingStyle#LOWER_HYPHEN}. You can use the {@link NamingStyle#to}
+ * method to convert a string from one case format to another.
  *
- * @type {CaseFormat}
+ * @type {NamingStyle}
  */
-export const LOWER_HYPHEN = CaseFormat.LOWER_HYPHEN;
+export const LOWER_HYPHEN = NamingStyle.LOWER_HYPHEN;
 
 /**
  * C++/Python variable naming convention, e.g., "lower_underscore".
  *
- * This constant is a {@link CaseFormat} instance, it is a short-hand of
- * {@link CaseFormat#LOWER_UNDERSCORE}. You can use the {@link CaseFormat#to}
+ * This constant is a {@link NamingStyle} instance, it is a shorthand of
+ * {@link NamingStyle#LOWER_UNDERSCORE}. You can use the {@link NamingStyle#to}
  * method to convert a string from one case format to another.
  *
- * @type {CaseFormat}
+ * @type {NamingStyle}
  */
-export const LOWER_UNDERSCORE = CaseFormat.LOWER_UNDERSCORE;
+export const LOWER_UNDERSCORE = NamingStyle.LOWER_UNDERSCORE;
 
 /**
  * Java variable naming convention, e.g., "lowerCamel".
  *
- * This constant is a {@link CaseFormat} instance, it is a short-hand of
- * {@link CaseFormat#LOWER_CAMEL}. You can use the {@link CaseFormat#to} method
+ * This constant is a {@link NamingStyle} instance, it is a shorthand of
+ * {@link NamingStyle#LOWER_CAMEL}. You can use the {@link NamingStyle#to} method
  * to convert a string from one case format to another.
  *
- * @type {CaseFormat}
+ * @type {NamingStyle}
  */
-export const LOWER_CAMEL = CaseFormat.LOWER_CAMEL;
+export const LOWER_CAMEL = NamingStyle.LOWER_CAMEL;
 
 /**
  * Java and C++ class naming convention, e.g., "UpperCamel".
  *
- * This constant is a {@link CaseFormat} instance, it is a short-hand of
- * {@link CaseFormat#UPPER_CAMEL}. You can use the {@link CaseFormat#to} method
+ * This constant is a {@link NamingStyle} instance, it is a short-hand of
+ * {@link NamingStyle#UPPER_CAMEL}. You can use the {@link NamingStyle#to} method
  * to convert a string from one case format to another.
  *
- * @type {CaseFormat}
+ * @type {NamingStyle}
  */
-export const UPPER_CAMEL = CaseFormat.UPPER_CAMEL;
+export const UPPER_CAMEL = NamingStyle.UPPER_CAMEL;
 
 /**
  * Java and C++ constant naming convention, e.g., "UPPER_UNDERSCORE".
  *
- * This constant is a {@link CaseFormat} instance, it is a short-hand of
- * {@link CaseFormat#UPPER_UNDERSCORE}. You can use the {@link CaseFormat#to}
+ * This constant is a {@link NamingStyle} instance, it is a shorthand of
+ * {@link NamingStyle#UPPER_UNDERSCORE}. You can use the {@link NamingStyle#to}
  * method to convert a string from one case format to another.
  *
- * @type {CaseFormat}
+ * @type {NamingStyle}
  */
-export const UPPER_UNDERSCORE = CaseFormat.UPPER_UNDERSCORE;
+export const UPPER_UNDERSCORE = NamingStyle.UPPER_UNDERSCORE;
 
-export { CaseFormat };
+export { NamingStyle };
 
-export default CaseFormat;
+export default NamingStyle;

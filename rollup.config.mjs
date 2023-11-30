@@ -8,4 +8,4 @@
 ////////////////////////////////////////////////////////////////////////////////
 import rollupBuilder from '@haixing_hu/rollup-builder';
 
-export default rollupBuilder('CaseFormat', import.meta.url);
+export default rollupBuilder('NamingStyle', import.meta.url);

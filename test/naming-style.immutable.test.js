@@ -12,16 +12,16 @@ import {
   LOWER_CAMEL,
   UPPER_CAMEL,
   UPPER_UNDERSCORE,
-  CaseFormat,
+  NamingStyle,
 } from '../src';
 
 /**
- * Unit tests of the immutability of the {@link CaseFormat} class.
+ * Unit tests of the immutability of the {@link NamingStyle} class.
  *
  * @author Haixing Hu
  */
-describe('Test the immutability of the CaseFormat class', () => {
-  test('Test the immutability of CaseFormat.LOWER_HYPHEN', () => {
+describe('Test the immutability of the NamingStyle class', () => {
+  test('Test the immutability of NamingStyle.LOWER_HYPHEN', () => {
     expect(() => {
       LOWER_HYPHEN.name = 'xxx';
     }).toThrow(Error);
@@ -41,7 +41,7 @@ describe('Test the immutability of the CaseFormat class', () => {
       LOWER_HYPHEN.quickOptimizer = null;
     }).toThrow(Error);
   });
-  test('Test the immutability of CaseFormat.LOWER_UNDERSCORE', () => {
+  test('Test the immutability of NamingStyle.LOWER_UNDERSCORE', () => {
     expect(() => {
       LOWER_UNDERSCORE.name = 'xxx';
     }).toThrow(Error);
@@ -61,7 +61,7 @@ describe('Test the immutability of the CaseFormat class', () => {
       LOWER_UNDERSCORE.quickOptimizer = null;
     }).toThrow(Error);
   });
-  test('Test the immutability of CaseFormat.LOWER_CAMEL', () => {
+  test('Test the immutability of NamingStyle.LOWER_CAMEL', () => {
     expect(() => {
       LOWER_CAMEL.name = 'xxx';
     }).toThrow(Error);
@@ -81,7 +81,7 @@ describe('Test the immutability of the CaseFormat class', () => {
       LOWER_CAMEL.quickOptimizer = null;
     }).toThrow(Error);
   });
-  test('Test the immutability of CaseFormat.UPPER_CAMEL', () => {
+  test('Test the immutability of NamingStyle.UPPER_CAMEL', () => {
     expect(() => {
       UPPER_CAMEL.name = 'xxx';
     }).toThrow(Error);
@@ -101,7 +101,7 @@ describe('Test the immutability of the CaseFormat class', () => {
       UPPER_CAMEL.quickOptimizer = null;
     }).toThrow(Error);
   });
-  test('Test the immutability of CaseFormat.UPPER_UNDERSCORE', () => {
+  test('Test the immutability of NamingStyle.UPPER_UNDERSCORE', () => {
     expect(() => {
       UPPER_UNDERSCORE.name = 'xxx';
     }).toThrow(Error);
@@ -121,27 +121,27 @@ describe('Test the immutability of the CaseFormat class', () => {
       UPPER_UNDERSCORE.quickOptimizer = null;
     }).toThrow(Error);
   });
-  test('Test the immutability of CaseFormat class', () => {
+  test('Test the immutability of NamingStyle class', () => {
     expect(() => {
-      CaseFormat.LOWER_HYPHEN = 'xxx';
+      NamingStyle.LOWER_HYPHEN = 'xxx';
     }).toThrow(Error);
     expect(() => {
-      CaseFormat.LOWER_UNDERSCORE = null;
+      NamingStyle.LOWER_UNDERSCORE = null;
     }).toThrow(Error);
     expect(() => {
-      CaseFormat.LOWER_CAMEL = 'xx';
+      NamingStyle.LOWER_CAMEL = 'xx';
     }).toThrow(Error);
     expect(() => {
-      CaseFormat.UPPER_CAMEL = null;
+      NamingStyle.UPPER_CAMEL = null;
     }).toThrow(Error);
     expect(() => {
-      CaseFormat.UPPER_UNDERSCORE = null;
+      NamingStyle.UPPER_UNDERSCORE = null;
     }).toThrow(Error);
     expect(() => {
-      CaseFormat.values = null;
+      NamingStyle.values = null;
     }).toThrow(Error);
     expect(() => {
-      CaseFormat.of = null;
+      NamingStyle.of = null;
     }).toThrow(Error);
   });
 });

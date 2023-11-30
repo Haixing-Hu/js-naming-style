@@ -10,48 +10,48 @@ import firstCharOnlyToUpper from './impl/first-char-only-to-upper';
 import findFirst from './impl/find-first';
 
 /**
- * A class that represents case formats.
+ * A enumeration class that represents naming styles of identifiers.
  *
- * This class is used to convert a string from one case format to another.
- * This class provides the following case format constants:
- * - {@link CaseFormat#LOWER_HYPHEN}: hyphenated variable naming convention,
- *   e.g., "lower-hyphen".
- * - {@link CaseFormat#LOWER_UNDERSCORE}: C++/Python variable naming convention,
- *   e.g., "lower_underscore".
- * - {@link CaseFormat#LOWER_CAMEL}: Java variable naming convention,
- *   e.g., "lowerCamel".
- * - {@link CaseFormat#UPPER_CAMEL}: Java and C++ class naming convention,
- *   e.g., "UpperCamel".
- * - {@link CaseFormat#UPPER_UNDERSCORE}: Java and C++ constant naming
- *   convention, e.g., "UPPER_UNDERSCORE".
+ * This class is used to convert a string from one naming style to another.
+ * This class provides the following naming style constants:
+ * - {@link NamingStyle#LOWER_HYPHEN}: XML hyphenated variable naming style,
+ *   e.g., `"lower-hyphen"`.
+ * - {@link NamingStyle#LOWER_UNDERSCORE}: C++/Python variable naming style,
+ *   e.g., `"lower_underscore"`.
+ * - {@link NamingStyle#LOWER_CAMEL}: Java variable naming style, e.g.,
+ *   `"lowerCamel"`.
+ * - {@link NamingStyle#UPPER_CAMEL}: Java and C++ class naming style, e.g.,
+ *   `"UpperCamel"`.
+ * - {@link NamingStyle#UPPER_UNDERSCORE}: Java and C++ constant naming style,
+ *   e.g., `"UPPER_UNDERSCORE"`.
  *
- * Each constant is a {@link CaseFormat} instance. You can use the
- * {@link CaseFormat#to} method to convert a string from one case format to
+ * Each constant is a {@link NamingStyle} instance. You can use the
+ * {@link NamingStyle#to} method to convert a string from one naming style to
  * another.
  *
  * Example usage:
  * ```js
  * const str = 'hello-world';
- * const result = CaseFormat.LOWER_HYPHEN.to(CaseFormat.LOWER_CAMEL, str);
+ * const result = NamingStyle.LOWER_HYPHEN.to(NamingStyle.LOWER_CAMEL, str);
  * expect(result).toBe('helloWorld');
  * ```
  *
  * @author Haixing Hu
  */
-class CaseFormat {
+class NamingStyle {
   /**
-   * Hyphenated variable naming convention, e.g., "lower-hyphen".
+   * XML hyphenated variable naming style, e.g., `"lower-hyphen"`.
    */
-  static LOWER_HYPHEN = new CaseFormat(
+  static LOWER_HYPHEN = new NamingStyle(
     'lower-hyphen',                 // name
     (c) => c === '-',               // wordBoundaryFilter
     '-',                            // wordSeparator
     (w) => w.toLowerCase(),         // wordNormalizer
     undefined,                      // firstWordNormalizer
-    (format, str) => {              // quickOptimizer
-      if (format === CaseFormat.LOWER_UNDERSCORE) {
+    (style, str) => {               // quickOptimizer
+      if (style === NamingStyle.LOWER_UNDERSCORE) {
         return str.replace(/-/g, '_');
-      } else if (format === CaseFormat.UPPER_UNDERSCORE) {
+      } else if (style === NamingStyle.UPPER_UNDERSCORE) {
         return str.replace(/-/g, '_').toUpperCase();
       }
       return undefined;
@@ -59,18 +59,18 @@ class CaseFormat {
   );
 
   /**
-   * C++/Python variable naming convention, e.g., "lower_underscore".
+   * C++/Python variable naming style, e.g., `"lower_underscore"`.
    */
-  static LOWER_UNDERSCORE = new CaseFormat(
+  static LOWER_UNDERSCORE = new NamingStyle(
     'lower-underscore',             // name
     (c) => c === '_',               // wordBoundaryFilter
     '_',                            // wordSeparator
     (w) => w.toLowerCase(),         // wordNormalizer
     undefined,                      // firstWordNormalizer
-    (format, str) => {              // quickOptimizer
-      if (format === CaseFormat.LOWER_HYPHEN) {
+    (style, str) => {               // quickOptimizer
+      if (style === NamingStyle.LOWER_HYPHEN) {
         return str.replace(/_/g, '-');
-      } else if (format === CaseFormat.UPPER_UNDERSCORE) {
+      } else if (style === NamingStyle.UPPER_UNDERSCORE) {
         return str.toUpperCase();
       }
       return undefined;
@@ -78,9 +78,9 @@ class CaseFormat {
   );
 
   /**
-   * Java variable naming convention, e.g., "lowerCamel".
+   * Java variable naming style, e.g., `"lowerCamel"`.
    */
-  static LOWER_CAMEL = new CaseFormat(
+  static LOWER_CAMEL = new NamingStyle(
     'lower-camel',                  // name
     (c) => (c >= 'A' && c <= 'Z'),  // wordBoundaryFilter
     '',                             // wordSeparator
@@ -89,9 +89,9 @@ class CaseFormat {
   );
 
   /**
-   * Java and C++ class naming convention, e.g., "UpperCamel".
+   * Java and C++ class naming style, e.g., `"UpperCamel"`.
    */
-  static UPPER_CAMEL = new CaseFormat(
+  static UPPER_CAMEL = new NamingStyle(
     'upper-camel',                  // name
     (c) => (c >= 'A' && c <= 'Z'),  // wordBoundaryFilter
     '',                             // wordSeparator
@@ -99,18 +99,18 @@ class CaseFormat {
   );
 
   /**
-   * Java and C++ constant naming convention, e.g., "UPPER_UNDERSCORE".
+   * Java and C++ constant naming style, e.g., `"UPPER_UNDERSCORE"`.
    */
-  static UPPER_UNDERSCORE = new CaseFormat(
+  static UPPER_UNDERSCORE = new NamingStyle(
     'upper-underscore',             // name
     (c) => c === '_',               // wordBoundaryFilter
     '_',                            // wordSeparator
     (w) => w.toUpperCase(),         // wordNormalizer
     undefined,                      // firstWordNormalizer
-    (format, str) => {              // quickOptimizer
-      if (format === CaseFormat.LOWER_HYPHEN) {
+    (style, str) => {               // quickOptimizer
+      if (style === NamingStyle.LOWER_HYPHEN) {
         return str.replace(/_/g, '-').toLowerCase();
-      } else if (format === CaseFormat.LOWER_UNDERSCORE) {
+      } else if (style === NamingStyle.LOWER_UNDERSCORE) {
         return str.toLowerCase();
       }
       return undefined;
@@ -118,56 +118,56 @@ class CaseFormat {
   );
 
   /**
-   * Returns all the case format constants.
+   * Returns all the naming style constants.
    *
-   * @return {Array<CaseFormat>}
-   *     the array of all case format constants.
+   * @return {Array<NamingStyle>}
+   *     the array of all naming style constants.
    */
   static values() {
     return [
-      CaseFormat.LOWER_HYPHEN,
-      CaseFormat.LOWER_UNDERSCORE,
-      CaseFormat.LOWER_CAMEL,
-      CaseFormat.UPPER_CAMEL,
-      CaseFormat.UPPER_UNDERSCORE,
+      NamingStyle.LOWER_HYPHEN,
+      NamingStyle.LOWER_UNDERSCORE,
+      NamingStyle.LOWER_CAMEL,
+      NamingStyle.UPPER_CAMEL,
+      NamingStyle.UPPER_UNDERSCORE,
     ];
   }
 
   /**
-   * Returns the case format constant of the specified name.
+   * Returns the naming style constant of the specified name.
    *
-   * @param {String|CaseFormat} name
-   *     the name of the case format constant, or a `CaseFormat` instance. The
+   * @param {String|NamingStyle} name
+   *     the name of the naming style constant, or a `NamingStyle` instance. The
    *     name is compared case-insensitively and the characters '-' and '_' are
    *     treated as the same.
-   * @return {CaseFormat}
-   *     the case format constant of the specified name, or the specified
-   *     `CaseFormat` instance if the argument `name` is a `CaseFormat` instance.
+   * @return {NamingStyle}
+   *     the naming style constant of the specified name, or the specified
+   *     `NamingStyle` instance if the argument `name` is a `NamingStyle` instance.
    * @throws {TypeError}
-   *     if the argument `name` is not a string nor a `CaseFormat` instance.
+   *     if the argument `name` is not a string nor a `NamingStyle` instance.
    * @throws {Error}
-   *     if there is no case format constant of the specified name.
+   *     if there is no naming style constant of the specified name.
    */
   static of(name) {
-    if (name instanceof CaseFormat) {
+    if (name instanceof NamingStyle) {
       return name;
     }
     if (typeof name !== 'string') {
-      throw new TypeError('The argument of `CaseFormat.of()` must be a string or a `CaseFormat` instance.');
+      throw new TypeError('The argument of `NamingStyle.of()` must be a string or a `NamingStyle` instance.');
     }
     const normalizedName = name.replace(/_/g, '-').toLowerCase();
-    const values = CaseFormat.values();
+    const values = NamingStyle.values();
     for (let i = 0; i < values.length; ++i) {
       const value = values[i];
       if (value.name.toLowerCase() === normalizedName) {
         return value;
       }
     }
-    throw new Error(`Unknown case format: '${name}'.`);
+    throw new Error(`Unknown naming style: '${name}'.`);
   }
 
   /**
-   * Constructor a {@link CaseFormat} instance.
+   * Constructor a {@link NamingStyle} instance.
    *
    * **NOTE:** this constructor is private, you should use the static constants
    * instead.
@@ -184,8 +184,8 @@ class CaseFormat {
    *     The function that normalizes the first word. If this argument is
    *     `undefined`, then the `wordNormalizer` will be used instead.
    * @param {Function|undefined} quickOptimizer
-   *     The function that optimizes the conversion from this case format to
-   *     some special case format. If this argument is `undefined`, then it is
+   *     The function that optimizes the conversion from this naming style to
+   *     some special naming style. If this argument is `undefined`, then it is
    *     ignored.
    */
   constructor(name, wordBoundaryFilter, wordSeparator, wordNormalizer, firstWordNormalizer, quickOptimizer) {
@@ -198,24 +198,24 @@ class CaseFormat {
   }
 
   /**
-   * Converts a specified string from this case format to another case format.
+   * Converts a specified string from this naming style to another naming style.
    *
-   * @param {CaseFormat} format
-   *     The target case format.
+   * @param {NamingStyle} style
+   *     The target naming style.
    * @param {String} str
    *     The string to be converted.
    * @return {String}
    *     The converted string.
    */
-  to(format, str) {
+  to(style, str) {
     if (str === null || str === undefined) {
       return str;
     }
-    if (format === this) {
+    if (style === this) {
       return str;
     }
     if (this.quickOptimizer) {
-      const result = this.quickOptimizer(format, str);
+      const result = this.quickOptimizer(style, str);
       if (result !== undefined) {
         return result;
       }
@@ -227,20 +227,20 @@ class CaseFormat {
       if (i === j) continue;
       const word = str.substring(i, j);
       if (i === 0) {
-        const normalizedWord = format.firstWordNormalizer(word);
+        const normalizedWord = style.firstWordNormalizer(word);
         result += normalizedWord;
       } else {
-        const normalizedWord = format.wordNormalizer(word);
+        const normalizedWord = style.wordNormalizer(word);
         result += normalizedWord;
       }
-      result += format.wordSeparator;
+      result += style.wordSeparator;
       i = j + this.wordSeparator.length;
     }
     if (i === 0) {
-      return format.firstWordNormalizer(str);
+      return style.firstWordNormalizer(str);
     } else {
       const word = str.substring(i);
-      const normalizedWord = format.wordNormalizer(word);
+      const normalizedWord = style.wordNormalizer(word);
       result += normalizedWord;
       return result;
     }
@@ -248,11 +248,11 @@ class CaseFormat {
 }
 
 // freeze the constants and the class
-Object.freeze(CaseFormat.LOWER_HYPHEN);
-Object.freeze(CaseFormat.LOWER_UNDERSCORE);
-Object.freeze(CaseFormat.LOWER_CAMEL);
-Object.freeze(CaseFormat.UPPER_CAMEL);
-Object.freeze(CaseFormat.UPPER_UNDERSCORE);
-Object.freeze(CaseFormat);
+Object.freeze(NamingStyle.LOWER_HYPHEN);
+Object.freeze(NamingStyle.LOWER_UNDERSCORE);
+Object.freeze(NamingStyle.LOWER_CAMEL);
+Object.freeze(NamingStyle.UPPER_CAMEL);
+Object.freeze(NamingStyle.UPPER_UNDERSCORE);
+Object.freeze(NamingStyle);
 
-export default CaseFormat;
+export default NamingStyle;
