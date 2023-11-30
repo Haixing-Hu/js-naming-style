@@ -133,3 +133,12 @@ doc/
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# yarn 2.x
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
