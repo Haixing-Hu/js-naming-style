@@ -6,7 +6,7 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/Haixing-Hu/js-naming-style/tree/master.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/Haixing-Hu/js-naming-style/tree/master)
 [![Coverage Status](https://coveralls.io/repos/github/Haixing-Hu/js-naming-style/badge.svg?branch=master)](https://coveralls.io/github/Haixing-Hu/js-naming-style?branch=master)
 
-`naming-style` is a JavaScript library for converting the naming style of 
+[naming-style] is a JavaScript library for converting the naming style of 
 identifiers. It supports various programming languages' naming conventions, 
 including Java, C++, and Python, facilitating the transition between different 
 casing styles.
@@ -21,7 +21,7 @@ casing styles.
     - [Available Format Conversions](#formats)
     - [Retrieving All Formats](#all-formats)
     - [Getting a Format by Name](#get-format)
-    - [Shortcut Access Methods](#shortcuts)
+    - [Shortcut Constants](#shortcuts)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -132,7 +132,7 @@ expect(format).toBe(NamingStyle.LOWER_CAMEL);
 
 If the provided name does not exist, an error will be thrown.
 
-### <span id="shortcuts">Shortcut Access Methods</span>
+### <span id="shortcuts">Shortcut Constants</span>
 
 In addition to using the `NamingStyle` class member constants, you can directly
 access different case styles through the following global constants:

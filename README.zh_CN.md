@@ -19,7 +19,7 @@
   - [可用的格式转换](#formats)
   - [获取所有格式](#all-formats)
   - [根据名称获取格式](#get-format)
-  - [快捷访问方式](#shortcuts)
+  - [快捷常量](#shortcuts)
 - [贡献方法](#contributing)
 - [版权协议](#license)
 
@@ -128,7 +128,7 @@ expect(format).toBe(NamingStyle.LOWER_CAMEL);
 
 如果提供的名称不存在，将抛出错误。
 
-### <span id="shortcuts">快捷访问方式</span>
+### <span id="shortcuts">快捷常量</span>
 
 除了使用 `NamingStyle` 类成员常量，还可以通过以下全局常量直接访问不同的大小写格式：
 
