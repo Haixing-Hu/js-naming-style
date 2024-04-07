@@ -1,6 +1,6 @@
 {
   "name": "@haixing_hu/naming-style",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A JavaScript library for converting between different naming styles of identifiers.",
   "author": "Haixing Hu",
   "license": "Apache-2.0",
@@ -19,12 +19,12 @@
     "conversion",
     "naming style"
   ],
-  "main": "dist/naming-style.cjs.min.js",
-  "module": "dist/naming-style.esm.min.mjs",
+  "main": "dist/naming-style.cjs.js",
+  "module": "dist/naming-style.esm.mjs",
   "exports": {
     ".": {
-      "require": "./dist/naming-style.cjs.min.js",
-      "import": "./dist/naming-style.esm.min.mjs"
+      "require": "./dist/naming-style.cjs.js",
+      "import": "./dist/naming-style.esm.mjs"
     }
   },
   "scripts": {

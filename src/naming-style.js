@@ -42,7 +42,7 @@ class NamingStyle {
   /**
    * XML hyphenated variable naming style, e.g., `"lower-hyphen"`.
    */
-  static LOWER_HYPHEN = new NamingStyle(
+  static LOWER_HYPHEN = Object.freeze(new NamingStyle(
     'lower-hyphen',                 // name
     (c) => c === '-',               // wordBoundaryFilter
     '-',                            // wordSeparator
@@ -56,12 +56,12 @@ class NamingStyle {
       }
       return undefined;
     },
-  );
+  ));
 
   /**
    * C++/Python variable naming style, e.g., `"lower_underscore"`.
    */
-  static LOWER_UNDERSCORE = new NamingStyle(
+  static LOWER_UNDERSCORE = Object.freeze(new NamingStyle(
     'lower-underscore',             // name
     (c) => c === '_',               // wordBoundaryFilter
     '_',                            // wordSeparator
@@ -75,33 +75,33 @@ class NamingStyle {
       }
       return undefined;
     },
-  );
+  ));
 
   /**
    * Java variable naming style, e.g., `"lowerCamel"`.
    */
-  static LOWER_CAMEL = new NamingStyle(
+  static LOWER_CAMEL = Object.freeze(new NamingStyle(
     'lower-camel',                  // name
     (c) => (c >= 'A' && c <= 'Z'),  // wordBoundaryFilter
     '',                             // wordSeparator
     (w) => firstCharOnlyToUpper(w), // wordNormalizer
     (w) => w.toLowerCase(),         // firstWordNormalizer
-  );
+  ));
 
   /**
    * Java and C++ class naming style, e.g., `"UpperCamel"`.
    */
-  static UPPER_CAMEL = new NamingStyle(
+  static UPPER_CAMEL = Object.freeze(new NamingStyle(
     'upper-camel',                  // name
     (c) => (c >= 'A' && c <= 'Z'),  // wordBoundaryFilter
     '',                             // wordSeparator
     (w) => firstCharOnlyToUpper(w), // wordNormalizer
-  );
+  ));
 
   /**
    * Java and C++ constant naming style, e.g., `"UPPER_UNDERSCORE"`.
    */
-  static UPPER_UNDERSCORE = new NamingStyle(
+  static UPPER_UNDERSCORE = Object.freeze(new NamingStyle(
     'upper-underscore',             // name
     (c) => c === '_',               // wordBoundaryFilter
     '_',                            // wordSeparator
@@ -115,7 +115,7 @@ class NamingStyle {
       }
       return undefined;
     },
-  );
+  ));
 
   /**
    * Returns all the naming style constants.
@@ -248,11 +248,6 @@ class NamingStyle {
 }
 
 // freeze the constants and the class
-Object.freeze(NamingStyle.LOWER_HYPHEN);
-Object.freeze(NamingStyle.LOWER_UNDERSCORE);
-Object.freeze(NamingStyle.LOWER_CAMEL);
-Object.freeze(NamingStyle.UPPER_CAMEL);
-Object.freeze(NamingStyle.UPPER_UNDERSCORE);
-Object.freeze(NamingStyle);
+// Object.freeze(NamingStyle);
 
 export default NamingStyle;

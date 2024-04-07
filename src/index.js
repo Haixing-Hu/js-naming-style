@@ -17,7 +17,7 @@ import NamingStyle from './naming-style';
  *
  * @type {NamingStyle}
  */
-export const LOWER_HYPHEN = NamingStyle.LOWER_HYPHEN;
+const LOWER_HYPHEN = NamingStyle.LOWER_HYPHEN;
 
 /**
  * C++/Python variable naming convention, e.g., "lower_underscore".
@@ -28,7 +28,7 @@ export const LOWER_HYPHEN = NamingStyle.LOWER_HYPHEN;
  *
  * @type {NamingStyle}
  */
-export const LOWER_UNDERSCORE = NamingStyle.LOWER_UNDERSCORE;
+const LOWER_UNDERSCORE = NamingStyle.LOWER_UNDERSCORE;
 
 /**
  * Java variable naming convention, e.g., "lowerCamel".
@@ -39,7 +39,7 @@ export const LOWER_UNDERSCORE = NamingStyle.LOWER_UNDERSCORE;
  *
  * @type {NamingStyle}
  */
-export const LOWER_CAMEL = NamingStyle.LOWER_CAMEL;
+const LOWER_CAMEL = NamingStyle.LOWER_CAMEL;
 
 /**
  * Java and C++ class naming convention, e.g., "UpperCamel".
@@ -50,7 +50,7 @@ export const LOWER_CAMEL = NamingStyle.LOWER_CAMEL;
  *
  * @type {NamingStyle}
  */
-export const UPPER_CAMEL = NamingStyle.UPPER_CAMEL;
+const UPPER_CAMEL = NamingStyle.UPPER_CAMEL;
 
 /**
  * Java and C++ constant naming convention, e.g., "UPPER_UNDERSCORE".
@@ -61,8 +61,15 @@ export const UPPER_CAMEL = NamingStyle.UPPER_CAMEL;
  *
  * @type {NamingStyle}
  */
-export const UPPER_UNDERSCORE = NamingStyle.UPPER_UNDERSCORE;
+const UPPER_UNDERSCORE = NamingStyle.UPPER_UNDERSCORE;
 
-export { NamingStyle };
+export {
+  NamingStyle,
+  LOWER_HYPHEN,
+  LOWER_UNDERSCORE,
+  LOWER_CAMEL,
+  UPPER_CAMEL,
+  UPPER_UNDERSCORE,
+};
 
 export default NamingStyle;
