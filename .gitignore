@@ -142,3 +142,6 @@ doc/
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# IDEA
+.idea
