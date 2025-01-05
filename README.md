@@ -1,6 +1,6 @@
-# @haixing_hu/naming-style
+# @qubit-ltd/naming-style
 
-[![npm package](https://img.shields.io/npm/v/@haixing_hu/naming-style.svg)](https://npmjs.com/package/@haixing_hu/naming-style)
+[![npm package](https://img.shields.io/npm/v/@qubit-ltd/naming-style.svg)](https://npmjs.com/package/@qubit-ltd/naming-style)
 [![License](https://img.shields.io/badge/License-Apache-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![中文文档](https://img.shields.io/badge/文档-中文版-blue.svg)](README.zh_CN.md)
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/Haixing-Hu/js-naming-style/tree/master.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/Haixing-Hu/js-naming-style/tree/master)
@@ -29,17 +29,17 @@ casing styles.
 
 Install via `npm`:
 ```bash
-npm install @haixing_hu/naming-style
+npm install @qubit-ltd/naming-style
 ```
 Or through `yarn`:
 ```bash
-yarn add @haixing_hu/naming-style
+yarn add @qubit-ltd/naming-style
 ```
 
 ## <span id="example">Usage Examples</span>
 
 ```js
-import NamingStyle from '@haixing_hu/naming-style';
+import NamingStyle from '@qubit-ltd/naming-style';
 
 const str = 'hello-world-boy';
 const converted = NamingStyle.LOWER_HYPHEN.to(NamingStyle.LOWER_CAMEL, str);
@@ -52,7 +52,7 @@ console.log(converted);     // Outputs "helloWorldBoy"
 
 Import the `NamingStyle` class:
 ```js
-import NamingStyle from '@haixing_hu/naming-style';
+import NamingStyle from '@qubit-ltd/naming-style';
 ```
 Or import the global constants representing various naming styles:
 ```js
@@ -62,7 +62,7 @@ import {
   LOWER_CAMEL,
   UPPER_CAMEL,
   UPPER_UNDERSCORE,
-} from '@haixing_hu/naming-style';
+} from '@qubit-ltd/naming-style';
 ```
 
 ### <span id="convert">Converting String Formats</span>
@@ -71,7 +71,7 @@ Use the static instances of the `NamingStyle` class to convert string formats.
 For example, converting a `lower-hyphen` naming style other styles:
 
 ```js
-import NamingStyle from '@haixing_hu/naming-style';
+import NamingStyle from '@qubit-ltd/naming-style';
 
 expect(NamingStyle.LOWER_HYPHEN.to(NamingStyle.LOWER_HYPHEN, 'hello-world')).toBe('hello-world');
 expect(NamingStyle.LOWER_HYPHEN.to(NamingStyle.LOWER_UNDERSCORE, 'hello-world')).toBe('hello_world');
@@ -144,7 +144,7 @@ import {
   LOWER_CAMEL, 
   UPPER_CAMEL, 
   UPPER_UNDERSCORE, 
-} from '@haixing_hu/naming-style';
+} from '@qubit-ltd/naming-style';
 
 expect(LOWER_HYPHEN.to(LOWER_HYPHEN, 'hello-world')).toBe('hello-world');
 expect(LOWER_HYPHEN.to(LOWER_UNDERSCORE, 'hello-world')).toBe('hello_world');
@@ -163,5 +163,5 @@ submit an issue or PR to our [GitHub repository].
 [naming-style] is licensed under Apache 2.0. For more details, please refer to 
 the [LICENSE](LICENSE) file.
 
-[naming-style]: https://npmjs.com/package/@haixing_hu/naming-style
+[naming-style]: https://npmjs.com/package/@qubit-ltd/naming-style
 [GitHub repository]: https://github.com/Haixing-Hu/js-naming-style

@@ -1,6 +1,6 @@
-# @haixing_hu/naming-style 
+# @qubit-ltd/naming-style 
 
-[![npm package](https://img.shields.io/npm/v/@haixing_hu/naming-style.svg)](https://npmjs.com/package/@haixing_hu/naming-style)
+[![npm package](https://img.shields.io/npm/v/@qubit-ltd/naming-style.svg)](https://npmjs.com/package/@qubit-ltd/naming-style)
 [![License](https://img.shields.io/badge/License-Apache-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![English Document](https://img.shields.io/badge/Document-English-blue.svg)](README.md)
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/Haixing-Hu/js-naming-style/tree/master.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/Haixing-Hu/js-naming-style/tree/master)
@@ -27,17 +27,17 @@
 
 通过 `npm` 安装：
 ```bash
-npm install @haixing_hu/naming-style
+npm install @qubit-ltd/naming-style
 ```
 或者通过 `yarn` 安装：
 ```bash
-yarn add @haixing_hu/naming-style
+yarn add @qubit-ltd/naming-style
 ```
 
 ## <span id="example">使用示例</span>
 
 ```js
-import NamingStyle from '@haixing_hu/naming-style';
+import NamingStyle from '@qubit-ltd/naming-style';
 
 const str = 'hello-world-boy';
 const converted = NamingStyle.LOWER_HYPHEN.to(NamingStyle.LOWER_CAMEL, str);
@@ -50,7 +50,7 @@ console.log(converted);     // 输出 "helloWorldBoy"
 
 导入`NamingStyle`类：
 ```js
-import NamingStyle from '@haixing_hu/naming-style';
+import NamingStyle from '@qubit-ltd/naming-style';
 ```
 或者导入表示各种命名风格的全局常量：
 ```js
@@ -60,7 +60,7 @@ import {
   LOWER_CAMEL,
   UPPER_CAMEL,
   UPPER_UNDERSCORE,
-} from '@haixing_hu/naming-style';
+} from '@qubit-ltd/naming-style';
 ```
 
 ### <span id="convert">转换字符串格式</span>
@@ -69,7 +69,7 @@ import {
 转换为其他风格：
 
 ```js
-import NamingStyle from '@haixing_hu/naming-style';
+import NamingStyle from '@qubit-ltd/naming-style';
 
 expect(NamingStyle.LOWER_HYPHEN.to(NamingStyle.LOWER_HYPHEN, 'hello-world')).toBe('hello-world');
 expect(NamingStyle.LOWER_HYPHEN.to(NamingStyle.LOWER_UNDERSCORE, 'hello-world')).toBe('hello_world');
@@ -139,7 +139,7 @@ import {
   LOWER_CAMEL, 
   UPPER_CAMEL, 
   UPPER_UNDERSCORE, 
-} from '@haixing_hu/naming-style';
+} from '@qubit-ltd/naming-style';
 
 expect(LOWER_HYPHEN.to(LOWER_HYPHEN, 'hello-world')).toBe('hello-world');
 expect(LOWER_HYPHEN.to(LOWER_UNDERSCORE, 'hello-world')).toBe('hello_world');
@@ -156,5 +156,5 @@ expect(LOWER_HYPHEN.to(UPPER_UNDERSCORE, 'hello-world')).toBe('HELLO_WORLD');
 
 [naming-style] 采用 Apache 2.0 许可证。详细信息请查阅 [LICENSE](LICENSE) 文件。
 
-[naming-style]: https://npmjs.com/package/@haixing_hu/naming-style
+[naming-style]: https://npmjs.com/package/@qubit-ltd/naming-style
 [GitHub 仓库]: https://github.com/Haixing-Hu/js-naming-style
